@@ -1,0 +1,38 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.envrc
+
+# --- Test / coverage ---
+.coverage
+htmlcov/
+.pytest_cache/
+
+# --- Build / dist ---
+build/
+dist/
+*.egg-info/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Agent execution artifacts (data plane) ---
+artifacts/logs/*
+artifacts/test_results/*
+artifacts/diffs/*
+!artifacts/**/.gitkeep
+!artifacts/logs/agent_mode.json
+!artifacts/agent_activity.jsonl
+!artifacts/logs/post_verify_report.md
+
+# --- Safety: never commit local scratch ---
+*.swp
+*.tmp

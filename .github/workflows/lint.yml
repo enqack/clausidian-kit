@@ -1,0 +1,28 @@
+name: lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install verification dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-verify.txt
+
+      - name: Gate evidence on code changes
+        run: bash tools/cvr/require_evidence_if_code_changed.sh
+
+      - name: Verify all (lints + tests when available)
+        run: bash tools/verify_all.sh

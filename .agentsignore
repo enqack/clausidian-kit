@@ -1,0 +1,43 @@
+# Agent ignore rules (gitignore-like globs).
+# Purpose: constrain what agents read as context (and optionally where they write).
+# Notes:
+# - Patterns are repo-relative.
+# - Negation supported via !pattern.
+
+# Secrets and credentials
+.env
+**/*.pem
+**/*.key
+**/*.p12
+**/.ssh/**
+**/.gnupg/**
+**/secrets/**
+
+# Common build and dependency blobs
+**/node_modules/**
+**/dist/**
+**/build/**
+**/.venv/**
+**/__pycache__/**
+
+# Databases / large binaries
+**/*.sqlite
+**/*.db
+**/*.bin
+**/*.zip
+
+# Verification Runtime (supervision kernel) - agents MUST NOT modify
+tools/cvr/**
+lib/**
+requirements-verify.txt
+.agent/workflows/**
+
+# Allowlist the important stuff explicitly
+!.agent/**
+!docs/**
+!AGENTS.md
+!AGENDA.md
+!implementation_plan.*
+!walkthrough.md
+!artifacts/**
+
