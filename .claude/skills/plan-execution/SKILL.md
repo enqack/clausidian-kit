@@ -21,10 +21,12 @@ If precondition is not met:
 Before drafting any plan, ensure context is loaded and agenda is verified:
 
 1. **Context Manifest**:
+
    - Check if `knowledge-vault/Logs/context_manifest.md` exists.
    - If MISSING, run `prep-context` skill.
 
-2. **Agenda Verification**:
+1. **Agenda Verification**:
+
    - Check if `knowledge-vault/Logs/post_verify_report.md` exists and is fresher than the latest `AGENDA.md` edit (heuristic).
    - If in doubt, or if never run for this session, run `verify-agenda` skill.
 

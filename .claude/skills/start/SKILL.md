@@ -24,12 +24,12 @@ Ensures foundational artifacts exist (`project_intent.md`, context manifest) the
    - Check if `knowledge-vault/Intent/project_intent.md` exists.
    - If MISSING, run `establish-intent` skill.
 
-2. **Ensure Context Prepared**
+1. **Ensure Context Prepared**
 
    - Check if `knowledge-vault/Logs/context_manifest.md` exists.
    - If MISSING, run `prep-context` skill.
    - If PRESENT, do not re-run (treat as already prepared for this session).
 
-3. **Hand off to Cycle**
+1. **Hand off to Cycle**
 
    - Run `plan-cycle` skill with the `auto_approve` argument.

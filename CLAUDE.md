@@ -114,12 +114,12 @@ multiple independent source projects within a single repository.
 
 ### Silo Management Tools
 
-| Tool | Purpose |
-| --- | --- |
-| `bin/silo-status` | Dashboard: mode, projects, health, recent activity |
-| `bin/new-project` | Register and bootstrap a new project |
-| `python3 tools/cvr/verify_silo.py` | Silo health check (all projects present) |
-| `python3 tools/cvr/init_project.py` | Low-level project initialization |
+| Tool                                | Purpose                                            |
+| ----------------------------------- | -------------------------------------------------- |
+| `bin/silo-status`                   | Dashboard: mode, projects, health, recent activity |
+| `bin/new-project`                   | Register and bootstrap a new project               |
+| `python3 tools/cvr/verify_silo.py`  | Silo health check (all projects present)           |
+| `python3 tools/cvr/init_project.py` | Low-level project initialization                   |
 
 ______________________________________________________________________
 
@@ -368,22 +368,22 @@ ______________________________________________________________________
 
 The following skills are available. Invoke them via their slash command alias.
 
-| Slash command | Skill file | Purpose |
-|---|---|---|
-| `/start` | `start` | Entry point for a new session or work cycle |
-| `/plan-cycle` | `plan-cycle` | Orchestrate the full plan → execute → review loop |
-| `/establish-intent` | `establish-intent` | Define project intent before planning |
-| `/prep-context` | `prep-context` | Load and verify workspace context |
-| `/verify-agenda` | `verify-agenda` | Validate AGENDA.md state |
-| `/plan-execution` | `plan-execution` | Produce an implementation plan |
-| `/execute-plan` | `execute-plan` | Execute an approved plan |
-| `/post-verify` | `post-verify` | Reconcile AGENDA.md after execution |
-| `/post-execution-review` | `post-execution-review` | Capture lessons learned |
-| `/finish` | `finish` | Unified verify → review → commit sequence |
-| `/commit-message` | `commit-message` | Generate Conventional Commit message |
-| `/markdown-checklist` | `markdown-checklist` | Verify Markdown quality |
-| `/toggle-maintenance-mode` | `toggle-maintenance-mode` | Enable/disable maintenance mode |
-| `/init-project` | `init-project` | Register and bootstrap a new project |
+| Slash command              | Skill file                | Purpose                                           |
+| -------------------------- | ------------------------- | ------------------------------------------------- |
+| `/start`                   | `start`                   | Entry point for a new session or work cycle       |
+| `/plan-cycle`              | `plan-cycle`              | Orchestrate the full plan → execute → review loop |
+| `/establish-intent`        | `establish-intent`        | Define project intent before planning             |
+| `/prep-context`            | `prep-context`            | Load and verify workspace context                 |
+| `/verify-agenda`           | `verify-agenda`           | Validate AGENDA.md state                          |
+| `/plan-execution`          | `plan-execution`          | Produce an implementation plan                    |
+| `/execute-plan`            | `execute-plan`            | Execute an approved plan                          |
+| `/post-verify`             | `post-verify`             | Reconcile AGENDA.md after execution               |
+| `/post-execution-review`   | `post-execution-review`   | Capture lessons learned                           |
+| `/finish`                  | `finish`                  | Unified verify → review → commit sequence         |
+| `/commit-message`          | `commit-message`          | Generate Conventional Commit message              |
+| `/markdown-checklist`      | `markdown-checklist`      | Verify Markdown quality                           |
+| `/toggle-maintenance-mode` | `toggle-maintenance-mode` | Enable/disable maintenance mode                   |
+| `/init-project`            | `init-project`            | Register and bootstrap a new project              |
 
 ______________________________________________________________________
 

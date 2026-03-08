@@ -37,9 +37,11 @@ Run `tools/verify_all.sh` to:
 The agent MUST NOT consider `execute-plan` finished until the feedback loop is closed.
 
 1. **Agenda Reconciliation**:
+
    - Run `post-verify` skill.
    - This generates `knowledge-vault/Logs/post_verify_report.md`.
 
-2. **Institutional Memory**:
+1. **Institutional Memory**:
+
    - Run `post-execution-review` skill.
    - This ensures lessons are captured in `knowledge-vault/Lessons/lessons-learned.md`.

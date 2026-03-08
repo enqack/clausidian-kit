@@ -26,14 +26,14 @@ If precondition is not met:
 
    - Run `post-verify` to reconcile `AGENDA.md` and generate the final report.
 
-2. **Seal History**
+1. **Seal History**
 
    - Run `post-execution-review` to aggregate the run into permanent history and extract lessons learned.
 
-3. **Prepare Handoff**
+1. **Prepare Handoff**
 
    - Run `commit-message` to generate candidate Conventional Commit messages.
 
-4. **Format Documentation**
+1. **Format Documentation**
 
    - Run `python3 tools/cvr/format_md.py` to ensure all artifacts and history files are perfectly formatted.

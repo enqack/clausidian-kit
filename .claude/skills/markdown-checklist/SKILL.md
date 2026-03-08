@@ -23,7 +23,7 @@ If precondition is not met:
    - Run `python3 tools/cvr/format_md.py`
    - If it fails, check `tools/check_tools.sh` and resolve dependencies.
 
-2. **Verify Structure**
+1. **Verify Structure**
 
    - [ ] Fenced code blocks have language identifiers?
    - [ ] Blank lines surround code blocks?
@@ -31,11 +31,11 @@ If precondition is not met:
    - [ ] No mixed bullets (`-` vs `*`)?
    - [ ] No hard-coded file links (`file://`)? (Run `linters/lint_common.py` checks)
 
-3. **Verify Links**
+1. **Verify Links**
 
    - [ ] All internal links are repo-relative?
    - [ ] External links are valid (`https://`)?
 
-4. **Commit**
+1. **Commit**
 
    - Only commit after formatting passes cleanly.

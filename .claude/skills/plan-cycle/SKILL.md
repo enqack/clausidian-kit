@@ -26,7 +26,7 @@ Meta-skill that orchestrates the standard development lifecycle. Does not perfor
    - Loads `CLAUDE.md`, `AGENDA.md`, and respects `.agentsignore`.
    - Produces `knowledge-vault/Logs/context_manifest.md`.
 
-2. **`verify-agenda`**
+1. **`verify-agenda`**
 
    - Ensures `AGENDA.md` is classified and valid.
    - Prevents planning against completed or unknown items.
@@ -57,7 +57,7 @@ Meta-skill that orchestrates the standard development lifecycle. Does not perfor
    - Reconciles `AGENDA.md` against reality.
    - Produces `knowledge-vault/Logs/post_verify_report.md`.
 
-6. **`post-execution-review`**
+1. **`post-execution-review`**
 
    - Captures lessons learned in `knowledge-vault/Lessons/lessons-learned.md`.
    - Closes the run.

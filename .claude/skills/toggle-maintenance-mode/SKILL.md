@@ -66,6 +66,6 @@ While `"mode": "maintenance"` is active, the agent MUST prepend the following ba
 ## Steps
 
 1. Read current `knowledge-vault/Logs/agent_mode.json` if it exists; otherwise assume `"normal"`.
-2. Apply Transition rules, writing the updated state file.
-3. Echo the new mode + timestamp + reason (if provided) to the operator.
-4. Stop.
+1. Apply Transition rules, writing the updated state file.
+1. Echo the new mode + timestamp + reason (if provided) to the operator.
+1. Stop.

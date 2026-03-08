@@ -41,8 +41,8 @@ If any mandatory context file is missing, **fail closed**.
 ## Required Actions
 
 1. Read all mandatory context files.
-2. Read additional context files subject to `.agentsignore` and any read-scope budget.
-3. Extract and internalize all enforceable constraints defined in `CLAUDE.md`.
+1. Read additional context files subject to `.agentsignore` and any read-scope budget.
+1. Extract and internalize all enforceable constraints defined in `CLAUDE.md`.
 
 ## Output: context_manifest.md
 

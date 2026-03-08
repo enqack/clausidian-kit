@@ -34,6 +34,6 @@ from aggregate_history import main
 ## Adding New Tests
 
 1. Create test file in `tests/cvr/` following pytest naming convention: `test_*.py`
-2. Import CVR modules directly (path is configured by conftest.py)
-3. Write tests using pytest conventions
-4. Run with `pytest tests/cvr/test_yourfile.py`
+1. Import CVR modules directly (path is configured by conftest.py)
+1. Write tests using pytest conventions
+1. Run with `pytest tests/cvr/test_yourfile.py`

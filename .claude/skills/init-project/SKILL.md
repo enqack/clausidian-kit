@@ -1,6 +1,6 @@
 ---
 name: init-project
-description: >
+description: >-
   Add a new project to the clausidian-kit Silo. Use this skill whenever the
   operator says "add a project", "new project", "init project", "initialize
   project", "create project", or otherwise requests a new entry in the Silo.
@@ -20,7 +20,7 @@ verified state with an updated registry before any work begins.
 **Tradeoff**: Requires a healthy Silo before it can run — unhealthy existing
 projects will block new additions until resolved.
 
----
+______________________________________________________________________
 
 ## Preconditions — Fail Closed on Any Failure
 
@@ -45,21 +45,21 @@ operator to resolve the failing project(s) before adding a new one.
 Check after the slug is known (Step 1). If `workspace/<slug>/` is present:
 fail closed and report the conflict to the operator.
 
----
+______________________________________________________________________
 
 ## Step 1 — Information Gathering
 
 Collect the following. Ask the operator for any that are missing:
 
-| Input | Description |
-|-------|-------------|
-| **Project Name** | Human-readable label (e.g. `My New Service`) |
-| **Slug** | Filesystem-safe directory name, lowercase with hyphens (e.g. `my-new-service`) |
+| Input            | Description                                                                    |
+| ---------------- | ------------------------------------------------------------------------------ |
+| **Project Name** | Human-readable label (e.g. `My New Service`)                                   |
+| **Slug**         | Filesystem-safe directory name, lowercase with hyphens (e.g. `my-new-service`) |
 
 Do not proceed to Step 2 until both values are confirmed. Once the slug is
 known, verify `workspace/<slug>/` does not already exist (see Preconditions).
 
----
+______________________________________________________________________
 
 ## Step 2 — Initialize
 
@@ -72,7 +72,7 @@ python3 tools/cvr/init_project.py --name "NAME" --slug "SLUG"
 If the command fails: report the error verbatim and **fail closed**. Do not
 proceed to Step 3.
 
----
+______________________________________________________________________
 
 ## Step 3 — Verify
 
@@ -92,7 +92,7 @@ before continuing.
 python3 tools/cvr/generate_context_manifest.py
 ```
 
----
+______________________________________________________________________
 
 ## Step 4 — Log and Notify
 
@@ -114,7 +114,7 @@ Then confirm completion to the operator with:
 - Silo verification: passed
 - Final line: "Project `SLUG` is ready. Add your source code to `workspace/SLUG/`."
 
----
+______________________________________________________________________
 
 ## Prohibitions
 

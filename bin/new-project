@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 # new-project — Register and bootstrap a new project in the clausidian-kit Silo.
 #
-# Usage: bin/new-project --name "My Project" --slug "my-project"
+# Usage:
+#   bin/new-project --name "My Project" --slug "my-project"
+#   bin/new-project --slug "my-project" --source https://github.com/user/repo.git
+#   bin/new-project --slug "my-project" --source ../local/repo --branch develop
+#
+# Options:
+#   --name    Human-readable project name (inferred from --source if omitted)
+#   --slug    Directory name under workspace/ (required)
+#   --source  Remote URL or local path to git clone (optional)
+#   --branch  Branch to clone, only valid with --source (optional)
 #
 # Delegates to tools/cvr/init_project.py. Run from the repo root.
 

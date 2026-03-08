@@ -7,7 +7,7 @@ destructive operations, and agent behaviors that conflict with workspace policie
 > Note: Claude Code permission controls are behavioral, not OS-level security
 > boundaries. Always pair them with human review and environment isolation.
 
----
+______________________________________________________________________
 
 ## 1) Use an Appropriate Permission Mode
 
@@ -19,7 +19,7 @@ Claude Code has three permission modes:
 
 **Recommendation**: Use default mode for all interactive sessions. Reserve auto-approve for well-understood, scripted pipelines.
 
----
+______________________________________________________________________
 
 ## 2) Guard Off-Limits Paths via `CLAUDE.md`
 
@@ -34,7 +34,7 @@ Agents MUST NOT modify the following paths:
 
 Claude Code reads and respects `CLAUDE.md` instructions during every session.
 
----
+______________________________________________________________________
 
 ## 3) Use `.agentsignore` as a Context Filter
 
@@ -45,7 +45,7 @@ The `.agentsignore` file (gitignore-like syntax) controls what files the agent r
 
 Do NOT treat `.agentsignore` as a substitute for proper secrets management.
 
----
+______________________________________________________________________
 
 ## 4) Audit Agent Activity
 
@@ -56,7 +56,7 @@ The ADK records all agent actions in an append-only ledger:
 
 Review this file regularly to audit what the agent has done.
 
----
+______________________________________________________________________
 
 ## 5) Enforce Human Review at Key Gates
 
@@ -68,7 +68,7 @@ The ADK's workflow skills have built-in human approval gates:
 
 Do not bypass these gates without understanding the consequences.
 
----
+______________________________________________________________________
 
 ## 6) Use Isolated Environments
 
@@ -78,7 +78,7 @@ For maximum safety:
 - Mount only the project workspace into the environment.
 - Avoid running agents on hosts with sensitive data outside the workspace.
 
----
+______________________________________________________________________
 
 ## 7) Safe Mode Checklist
 
