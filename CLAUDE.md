@@ -79,6 +79,9 @@ ______________________________________________________________________
 - **Journal**: A deterministic narrative summary of a Run.
 - **Deep Thoughts**: A narrative reconstruction derived from run artifacts, intended to illustrate a deterministic decision process rather than serve as a primary source of truth.
 - **History**: The immutable sequence of all Runs and their metadata.
+- **Silo**: The clausidian-kit root repository acting as the supervision kernel and container for all projects.
+- **Project**: A registered source workspace under `workspace/<slug>/`. Contains source code only — no ADK files.
+- **Project Registry**: `PROJECTS.md` — the authoritative table of all projects hosted in this Silo.
 
 Examples of non-trivial work:
 
@@ -87,6 +90,36 @@ Examples of non-trivial work:
 - Refactoring supervision logic
 - Introducing or altering persistent artifacts
 - Changing interfaces (`tools/test.sh`, CLI contracts, artifact schemas)
+
+______________________________________________________________________
+
+## Silo Architecture
+
+clausidian-kit operates as a **Silo Root** — a supervision kernel that hosts
+multiple independent source projects within a single repository.
+
+### Layout
+
+- **Silo Root** (`/`) — ADK runtime, governance, shared `knowledge-vault/`.
+- **Projects** (`workspace/<slug>/`) — Source code only. No `CLAUDE.md`, `AGENDA.md`, or ADK files live inside a project directory.
+- **Project Registry** (`PROJECTS.md`) — Authoritative list of all registered projects. Managed by `tools/cvr/init_project.py`; agents MUST NOT edit it manually.
+- **Shared Vault** (`knowledge-vault/`) — All runs, journals, history, and activity logs for all projects live here. There is no per-project vault.
+
+### Silo Invariants (Normative)
+
+- `tools/cvr/verify_silo.py` MUST pass before any project is added.
+- A project directory (`workspace/<slug>/`) MUST exist for every non-root row in `PROJECTS.md`.
+- An orphaned registry entry (no matching directory) is a **fail-closed condition**.
+- Agents MUST use `bin/new-project` or `python3 tools/cvr/init_project.py` to add projects — never manually.
+
+### Silo Management Tools
+
+| Tool | Purpose |
+| --- | --- |
+| `bin/silo-status` | Dashboard: mode, projects, health, recent activity |
+| `bin/new-project` | Register and bootstrap a new project |
+| `python3 tools/cvr/verify_silo.py` | Silo health check (all projects present) |
+| `python3 tools/cvr/init_project.py` | Low-level project initialization |
 
 ______________________________________________________________________
 
@@ -337,19 +370,20 @@ The following skills are available. Invoke them via their slash command alias.
 
 | Slash command | Skill file | Purpose |
 |---|---|---|
-| `/start` | `adk-start` | Entry point for a new session or work cycle |
-| `/plan-cycle` | `adk-plan-cycle` | Orchestrate the full plan → execute → review loop |
-| `/establish-intent` | `adk-establish-intent` | Define project intent before planning |
-| `/prep-context` | `adk-prep-context` | Load and verify workspace context |
-| `/verify-agenda` | `adk-verify-agenda` | Validate AGENDA.md state |
-| `/plan-execution` | `adk-plan-execution` | Produce an implementation plan |
-| `/execute-plan` | `adk-execute-plan` | Execute an approved plan |
-| `/post-verify` | `adk-post-verify` | Reconcile AGENDA.md after execution |
-| `/post-execution-review` | `adk-post-execution-review` | Capture lessons learned |
-| `/finish` | `adk-finish` | Unified verify → review → commit sequence |
-| `/commit-message` | `adk-commit-message` | Generate Conventional Commit message |
-| `/markdown-checklist` | `adk-markdown-checklist` | Verify Markdown quality |
-| `/toggle-maintenance-mode` | `adk-toggle-maintenance-mode` | Enable/disable maintenance mode |
+| `/start` | `start` | Entry point for a new session or work cycle |
+| `/plan-cycle` | `plan-cycle` | Orchestrate the full plan → execute → review loop |
+| `/establish-intent` | `establish-intent` | Define project intent before planning |
+| `/prep-context` | `prep-context` | Load and verify workspace context |
+| `/verify-agenda` | `verify-agenda` | Validate AGENDA.md state |
+| `/plan-execution` | `plan-execution` | Produce an implementation plan |
+| `/execute-plan` | `execute-plan` | Execute an approved plan |
+| `/post-verify` | `post-verify` | Reconcile AGENDA.md after execution |
+| `/post-execution-review` | `post-execution-review` | Capture lessons learned |
+| `/finish` | `finish` | Unified verify → review → commit sequence |
+| `/commit-message` | `commit-message` | Generate Conventional Commit message |
+| `/markdown-checklist` | `markdown-checklist` | Verify Markdown quality |
+| `/toggle-maintenance-mode` | `toggle-maintenance-mode` | Enable/disable maintenance mode |
+| `/init-project` | `init-project` | Register and bootstrap a new project |
 
 ______________________________________________________________________
 

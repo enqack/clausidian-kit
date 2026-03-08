@@ -1,9 +1,9 @@
 ---
-name: adk-toggle-maintenance-mode
+name: toggle-maintenance-mode
 description: Toggle MAINTENANCE mode for the agent (operator-controlled). Use when /toggle-maintenance-mode is invoked or the operator needs to enable Runtime modification access.
 ---
 
-# adk-toggle-maintenance-mode
+# toggle-maintenance-mode
 
 ## Purpose
 
@@ -24,7 +24,7 @@ If precondition is not met:
 
 - **FAIL CLOSED**
 - Alert the operator that intent must be established before toggling maintenance mode.
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue until intent is established.
 
 ## Normative behavior

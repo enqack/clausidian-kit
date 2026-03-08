@@ -23,7 +23,7 @@ def main() -> int:
 
   bad = []
   for p in sorted(wf_dir.glob("*/SKILL.md")):
-    if p.parent.name == "adk-establish-intent":
+    if p.parent.name == "establish-intent":
       continue
     txt = p.read_text(encoding="utf-8")
     if not workflow_requires_intent(txt):

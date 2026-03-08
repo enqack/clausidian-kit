@@ -1,9 +1,9 @@
 ---
-name: adk-establish-intent
+name: establish-intent
 description: Establish project intent before any planning or execution. Use when /establish-intent is invoked, or when knowledge-vault/Intent/project_intent.md is missing.
 ---
 
-# adk-establish-intent
+# establish-intent
 
 ## Purpose
 

@@ -1,9 +1,9 @@
 ---
-name: adk-post-execution-review
+name: post-execution-review
 description: Capture institutional memory from an executed plan. Use when /post-execution-review is invoked or after post-verify to record lessons learned.
 ---
 
-# adk-post-execution-review
+# post-execution-review
 
 ## Precondition
 
@@ -13,7 +13,7 @@ If precondition is not met:
 
 - **FAIL CLOSED**
 - Ask the operator: "What are you trying to produce in this repo (software, book, research notes, something else), and what does 'done' look like for the first milestone?"
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue with any other skill until intent is established.
 
 ## Inputs

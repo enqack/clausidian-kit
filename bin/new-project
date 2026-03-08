@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# new-project — Register and bootstrap a new project in the clausidian-kit Silo.
+#
+# Usage: bin/new-project --name "My Project" --slug "my-project"
+#
+# Delegates to tools/cvr/init_project.py. Run from the repo root.
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
+
+# Ensure a virtual environment is active
+if [[ -z "${VIRTUAL_ENV:-}" ]]; then
+    if [[ -f ".venv/bin/activate" ]]; then
+        # shellcheck source=/dev/null
+        source .venv/bin/activate
+    else
+        echo "WARNING: No virtual environment detected. Proceeding with system Python." >&2
+    fi
+fi
+
+exec python3 tools/cvr/init_project.py "$@"

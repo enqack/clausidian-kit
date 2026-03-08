@@ -62,9 +62,9 @@ Review this file regularly to audit what the agent has done.
 
 The ADK's workflow skills have built-in human approval gates:
 
-- `adk-plan-cycle` stops after `adk-plan-execution` by default and waits for you to approve the plan before execution begins.
-- `adk-commit-message` generates candidates but never commits — the operator runs `git commit`.
-- `adk-toggle-maintenance-mode` requires explicit operator invocation to expand agent permissions.
+- `plan-cycle` stops after `plan-execution` by default and waits for you to approve the plan before execution begins.
+- `commit-message` generates candidates but never commits — the operator runs `git commit`.
+- `toggle-maintenance-mode` requires explicit operator invocation to expand agent permissions.
 
 Do not bypass these gates without understanding the consequences.
 

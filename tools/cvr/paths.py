@@ -48,3 +48,7 @@ AGENDA_STATE = HISTORY_DIR / "agenda_state.json"
 # Evidence directories
 DIFFS_DIR = LOGS_DIR / "diffs"
 TEST_RESULTS_DIR = LOGS_DIR / "test_results"
+
+# Silo multi-project paths
+WORKSPACE_ROOT = Path("workspace")
+PROJECTS_REGISTRY = Path("PROJECTS.md")

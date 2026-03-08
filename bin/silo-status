@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# silo-status — clausidian-kit Silo dashboard
+#
+# Displays: agent mode, registered projects, silo health, recent activity.
+# Run from the repo root.
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
+
+MODE_FILE="knowledge-vault/Logs/agent_mode.json"
+PROJECTS_FILE="PROJECTS.md"
+ACTIVITY_DIR="knowledge-vault/Activity"
+
+# ── Agent Mode ──────────────────────────────────────────────────────────────
+echo "=== clausidian-kit Silo Status ==="
+echo ""
+
+if [[ -f "$MODE_FILE" ]]; then
+    mode=$(python3 -c "import json,sys; d=json.load(open('$MODE_FILE')); print(d.get('mode','normal').upper())")
+else
+    mode="NORMAL"
+fi
+echo "Agent Mode : $mode"
+echo ""
+
+# ── Registered Projects ──────────────────────────────────────────────────────
+echo "=== Projects (PROJECTS.md) ==="
+if [[ -f "$PROJECTS_FILE" ]]; then
+    grep '|' "$PROJECTS_FILE" | grep -v '^#' | grep -v '^$'
+else
+    echo "  [!] PROJECTS.md not found"
+fi
+echo ""
+
+# ── Silo Health ──────────────────────────────────────────────────────────────
+echo "=== Silo Health ==="
+if python3 tools/cvr/verify_silo.py; then
+    : # message printed by verify_silo.py
+else
+    echo "[!] Silo verification FAILED — see errors above"
+fi
+echo ""
+
+# ── Recent Activity ──────────────────────────────────────────────────────────
+echo "=== Recent Activity (today) ==="
+TODAY="$ACTIVITY_DIR/$(date -u +%Y-%m-%d).md"
+if [[ -f "$TODAY" ]]; then
+    tail -n 5 "$TODAY"
+else
+    echo "  (no activity logged today)"
+fi

@@ -1,9 +1,9 @@
 ---
-name: adk-plan-cycle
+name: plan-cycle
 description: Orchestrate the full ADK development lifecycle (prepare → verify agenda → plan → execute → review). Use when the user runs /plan-cycle or needs to run the full loop.
 ---
 
-# adk-plan-cycle
+# plan-cycle
 
 ## Purpose
 
@@ -21,19 +21,19 @@ Meta-skill that orchestrates the standard development lifecycle. Does not perfor
 
 ### 1. Preparation
 
-1. **`adk-prep-context`**
+1. **`prep-context`**
 
    - Loads `CLAUDE.md`, `AGENDA.md`, and respects `.agentsignore`.
    - Produces `knowledge-vault/Logs/context_manifest.md`.
 
-2. **`adk-verify-agenda`**
+2. **`verify-agenda`**
 
    - Ensures `AGENDA.md` is classified and valid.
    - Prevents planning against completed or unknown items.
 
 ### 2. Planning
 
-3. **`adk-plan-execution`**
+3. **`plan-execution`**
 
    - Reads context and agenda.
    - Produces `knowledge-vault/Runs/<run-id>/implementation_plan.md`.
@@ -45,19 +45,19 @@ Meta-skill that orchestrates the standard development lifecycle. Does not perfor
 
 ### 3. Execution
 
-4. **`adk-execute-plan`**
+4. **`execute-plan`**
 
    - Executes the approved plan.
    - Runs verification (`tools/verify_all.sh`).
 
 ### 4. Review
 
-5. **`adk-post-verify`**
+5. **`post-verify`**
 
    - Reconciles `AGENDA.md` against reality.
    - Produces `knowledge-vault/Logs/post_verify_report.md`.
 
-6. **`adk-post-execution-review`**
+6. **`post-execution-review`**
 
    - Captures lessons learned in `knowledge-vault/Lessons/lessons-learned.md`.
    - Closes the run.

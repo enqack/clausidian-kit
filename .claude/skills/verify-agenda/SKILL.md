@@ -1,9 +1,9 @@
 ---
-name: adk-verify-agenda
+name: verify-agenda
 description: Verify agenda items and classify their completion status. Use when /verify-agenda is invoked or before planning to ensure AGENDA.md is valid.
 ---
 
-# adk-verify-agenda
+# verify-agenda
 
 ## Precondition
 
@@ -13,7 +13,7 @@ If precondition is not met:
 
 - **FAIL CLOSED**
 - Ask the operator: "What are you trying to produce in this repo (software, book, research notes, something else), and what does 'done' look like for the first milestone?"
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue with any other skill until intent is established.
 
 ## Classification

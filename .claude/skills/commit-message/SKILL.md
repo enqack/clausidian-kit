@@ -1,9 +1,9 @@
 ---
-name: adk-commit-message
+name: commit-message
 description: Generate a Conventional Commit message from changes since the last commit. Use when /commit-message is invoked or the user asks for a commit message.
 ---
 
-# adk-commit-message
+# commit-message
 
 ## Precondition
 
@@ -13,7 +13,7 @@ If precondition is not met:
 
 - **FAIL CLOSED**
 - Ask the operator: "What are you trying to produce in this repo (software, book, research notes, something else), and what does 'done' look like for the first milestone?"
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue with any other skill until intent is established.
 
 ## Commit message format (normative)

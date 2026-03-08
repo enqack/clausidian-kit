@@ -1,9 +1,9 @@
 ---
-name: adk-prep-context
+name: prep-context
 description: Load and verify workspace context at the start of a session. Use when /prep-context is invoked or knowledge-vault/Logs/context_manifest.md is missing.
 ---
 
-# adk-prep-context
+# prep-context
 
 ## Precondition
 
@@ -13,7 +13,7 @@ If the precondition is not met:
 
 - **FAIL CLOSED**
 - Ask the operator: "What are you trying to produce in this repo (software, book, research notes, something else), and what does 'done' look like for the first milestone?"
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue with any other skill until intent is established.
 
 ## Operating Rules

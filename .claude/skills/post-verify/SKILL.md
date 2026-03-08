@@ -1,9 +1,9 @@
 ---
-name: adk-post-verify
+name: post-verify
 description: Re-run agenda verification after execution and record reconciliation results. Use when /post-verify is invoked or after executing a plan to reconcile AGENDA.md.
 ---
 
-# adk-post-verify
+# post-verify
 
 ## Precondition
 
@@ -13,7 +13,7 @@ If precondition is not met:
 
 - **FAIL CLOSED**
 - Ask the operator: "What are you trying to produce in this repo (software, book, research notes, something else), and what does 'done' look like for the first milestone?"
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue with any other skill until intent is established.
 
 After executing a plan, re-verify that `AGENDA.md` reflects reality.

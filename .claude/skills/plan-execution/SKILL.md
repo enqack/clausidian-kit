@@ -1,9 +1,9 @@
 ---
-name: adk-plan-execution
+name: plan-execution
 description: Produce an implementation plan from the verified agenda. Use when /plan-execution is invoked or when a plan artifact is needed before execution.
 ---
 
-# adk-plan-execution
+# plan-execution
 
 ## Precondition
 
@@ -13,7 +13,7 @@ If precondition is not met:
 
 - **FAIL CLOSED**
 - Ask the operator: "What are you trying to produce in this repo (software, book, research notes, something else), and what does 'done' look like for the first milestone?"
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue with any other skill until intent is established.
 
 ## Prerequisites (conditional)
@@ -22,11 +22,11 @@ Before drafting any plan, ensure context is loaded and agenda is verified:
 
 1. **Context Manifest**:
    - Check if `knowledge-vault/Logs/context_manifest.md` exists.
-   - If MISSING, run `adk-prep-context` skill.
+   - If MISSING, run `prep-context` skill.
 
 2. **Agenda Verification**:
    - Check if `knowledge-vault/Logs/post_verify_report.md` exists and is fresher than the latest `AGENDA.md` edit (heuristic).
-   - If in doubt, or if never run for this session, run `adk-verify-agenda` skill.
+   - If in doubt, or if never run for this session, run `verify-agenda` skill.
 
 ## Ignore semantics (normative)
 

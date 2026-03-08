@@ -1,9 +1,9 @@
 ---
-name: adk-markdown-checklist
+name: markdown-checklist
 description: Verify Markdown structure and quality. Use when /markdown-checklist is invoked or when creating or modifying significant Markdown documentation.
 ---
 
-# adk-markdown-checklist
+# markdown-checklist
 
 ## Precondition
 
@@ -13,7 +13,7 @@ If precondition is not met:
 
 - **FAIL CLOSED**
 - Ask the operator: "What are you trying to produce in this repo (software, book, research notes, something else), and what does 'done' look like for the first milestone?"
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue with any other skill until intent is established.
 
 ## Steps

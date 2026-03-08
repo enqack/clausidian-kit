@@ -1,9 +1,9 @@
 ---
-name: adk-execute-plan
+name: execute-plan
 description: Execute an approved implementation plan, collect evidence, and summarize results. Use when /execute-plan is invoked or when the user approves a plan and wants to proceed with execution.
 ---
 
-# adk-execute-plan
+# execute-plan
 
 ## Precondition
 
@@ -13,7 +13,7 @@ If precondition is not met:
 
 - **FAIL CLOSED**
 - Ask the operator: "What are you trying to produce in this repo (software, book, research notes, something else), and what does 'done' look like for the first milestone?"
-- Initiate the `adk-establish-intent` skill.
+- Initiate the `establish-intent` skill.
 - Do **not** continue with any other skill until intent is established.
 
 ## Ignore semantics (normative)
@@ -34,12 +34,12 @@ Run `tools/verify_all.sh` to:
 
 ## After completion (normative)
 
-The agent MUST NOT consider `adk-execute-plan` finished until the feedback loop is closed.
+The agent MUST NOT consider `execute-plan` finished until the feedback loop is closed.
 
 1. **Agenda Reconciliation**:
-   - Run `adk-post-verify` skill.
+   - Run `post-verify` skill.
    - This generates `knowledge-vault/Logs/post_verify_report.md`.
 
 2. **Institutional Memory**:
-   - Run `adk-post-execution-review` skill.
+   - Run `post-execution-review` skill.
    - This ensures lessons are captured in `knowledge-vault/Lessons/lessons-learned.md`.
